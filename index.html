@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aegis Browser - Secure Web3, Onion, and Web2 Browsing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #030712;
+            color: #d1d5db;
+        }
+
+        .font-mono {
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        .glass-pane {
+            background-color: rgba(17, 24, 39, 0.5);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .gradient-bg {
+            background: radial-gradient(circle at 10% 20%, rgba(22, 63, 13, 0.4), transparent 50%),
+                radial-gradient(circle at 80% 90%, rgba(13, 37, 63, 0.4), transparent 50%),
+                #030712;
+        }
+
+        .grid-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            mask-image: radial-gradient(circle, white 10%, transparent 70%);
+            z-index: -1;
+        }
+
+        .glow-button {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glow-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background: radial-gradient(circle, rgba(52, 211, 153, 0.2), transparent 70%);
+            transform: translate(-50%, -50%);
+            transition: opacity 0.5s;
+            opacity: 0;
+        }
+
+        .glow-button:hover::before {
+            opacity: 1;
+        }
+
+        .scroll-reveal {
+            transition: opacity 0.8s, transform 0.8s;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="gradient-bg">
+
+    <div class="relative overflow-x-hidden">
+        <div class="grid-pattern"></div>
+
+        <header class="fixed top-0 left-0 right-0 z-50 glass-pane">
+            <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+                <a href="#" class="flex items-center gap-2">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 2Z"
+                            stroke="#34D399" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <span class="text-xl font-bold text-white">Aegis<span class="text-emerald-400">Browser</span></span>
+                </a>
+                <nav class="hidden md:flex items-center gap-6 font-mono text-sm">
+                    <a href="#beta-test" class="hover:text-emerald-400 transition-colors">Beta Test</a>
+                    <a href="#collaborate" class="hover:text-emerald-400 transition-colors">Collaborate</a>
+                    <a href="https://github.com/your-username/your-repo" target="_blank"
+                        class="text-white bg-emerald-500/20 border border-emerald-500/30 px-4 py-2 rounded-md hover:bg-emerald-500/30 transition-colors">Star
+                        on GitHub</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="pt-32 pb-20">
+            <section class="text-center container mx-auto px-6">
+                <div class="max-w-4xl mx-auto">
+                    <h1 class="text-5xl md:text-7xl font-black tracking-tighter text-white leading-tight mb-4 scroll-reveal">
+                        The World's Most Secure Browser.
+                    </h1>
+                    <p class="text-lg md:text-xl max-w-2xl mx-auto text-gray-400 mb-8 scroll-reveal" style="transition-delay: 100ms;">
+                        Aegis Browser is your all-in-one solution for Web2, Web3, and Onion network browsing, with best-in-class security features.
+                    </p>
+                    <div class="flex justify-center gap-4 flex-wrap scroll-reveal" style="transition-delay: 200ms;">
+                        <a href="#beta-test" class="glow-button text-white font-semibold bg-emerald-500 hover:bg-emerald-600 transition-all duration-300 px-8 py-4 rounded-lg text-lg">
+                            Join the Beta Test
+                        </a>
+                        <a href="https://github.com/your-username/your-repo" target="_blank"
+                            class="text-white font-semibold bg-gray-700/50 border border-gray-600 hover:border-gray-500 hover:bg-gray-700/80 transition-all duration-300 px-8 py-4 rounded-lg text-lg">
+                            Contribute on GitHub
+                        </a>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="container mx-auto px-6 py-24">
+                <div class="max-w-4xl mx-auto text-left">
+                    <h2 class="text-3xl md:text-4xl font-black text-white mb-6 scroll-reveal">Aegis Browser</h2>
+                    <div class="space-y-12">
+                        <div class="scroll-reveal">
+                            <h3 class="text-2xl font-bold text-emerald-400 mb-3">Vision</h3>
+                            <p class="text-gray-400">My vision for Aegis Browser is to create the world's most secure and versatile browser, seamlessly integrating <b>Web2, Web3, and Onion network functionalities</b>. The goal is to provide a single, powerful tool for all browsing needs, prioritizing user security, privacy, and control.</p>
+                        </div>
+
+                        <div class="scroll-reveal" style="transition-delay: 100ms;">
+                            <h3 class="text-2xl font-bold text-emerald-400 mb-3">Features</h3>
+                            <ul class="space-y-8">
+                                <li class="space-y-2">
+                                    <h4 class="text-xl font-semibold text-white">Web2 Browsing (Current Functionality)</h4>
+                                    <ul class="list-disc list-inside space-y-1 text-gray-400">
+                                        <li><b>Tabbed Interface:</b> Manage multiple web pages easily.</li>
+                                        <li><b>Standard Navigation:</b> Back, forward, reload, and home buttons for a familiar experience.</li>
+                                        <li><b>URL Bar:</b> Navigate to any website.</li>
+                                        <li><b>Dynamic Tab Titles:</b> Tab names update with the page title.</li>
+                                    </ul>
+                                </li>
+                                <li class="space-y-2">
+                                    <h4 class="text-xl font-semibold text-white">Web3 Integration (Planned)</h4>
+                                    <ul class="list-disc list-inside space-y-1 text-gray-400">
+                                        <li><b>Integrated Crypto Wallet:</b> A built-in wallet to manage and interact with cryptocurrencies and NFTs without needing extensions.</li>
+                                        <li><b>Decentralized Application (dApp) Access:</b> Direct connection to blockchain networks to use dApps for DeFi, gaming, and more.</li>
+                                        <li><b>Enhanced Privacy:</b> By using blockchain, Aegis Browser will give users true ownership of their data and prevent centralized platforms from tracking and selling it.</li>
+                                    </ul>
+                                </li>
+                                <li class="space-y-2">
+                                    <h4 class="text-xl font-semibold text-white">Onion Network Functionality (Planned)</h4>
+                                    <ul class="list-disc list-inside space-y-1 text-gray-400">
+                                        <li><b>Anonymity:</b> Route traffic through the Tor network to hide your IP address and online activity from surveillance and tracking.</li>
+                                        <li><b>Anti-Fingerprinting:</b> Make all users look the same to resist techniques that identify you based on your browser and device information.</li>
+                                        <li><b>Censorship Circumvention:</b> Access blocked websites and content in a secure way.</li>
+                                        <li><b>Secure Browsing:</b> Multi-layered encryption for your traffic as it passes through the Tor network.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="scroll-reveal" style="transition-delay: 200ms;">
+                            <h3 class="text-2xl font-bold text-emerald-400 mb-3">Current Development</h3>
+                            <p class="text-gray-400">Aegis Browser is a personal project still in its early stages. The current version provides a basic Web2 browsing experience. I'm actively working on adding the advanced features mentioned above. The project's development will be focused on a modular architecture to ensure each browsing mode (Web2, Web3, Onion) is secure and stable.</p>
+                        </div>
+                        
+                        <div class="scroll-reveal" style="transition-delay: 300ms;">
+                            <h3 class="text-2xl font-bold text-emerald-400 mb-3">Contribution</h3>
+                            <p class="text-gray-400">This is a work in progress, and your contributions are welcome. Feel free to fork the repository, suggest improvements, and help build a browser that puts the user in control of their online experience.</p>
+                        </div>
+                        
+                        <div class="scroll-reveal" style="transition-delay: 400ms;">
+                            <h3 class="text-2xl font-bold text-emerald-400 mb-3">Note</h3>
+                            <p class="text-gray-400">This project may contain bugs and is a prototype. Do not use it as your primary browser for critical tasks until it has undergone further development and security audits.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="beta-test" class="container mx-auto px-6 py-24 text-center">
+                <div class="glass-pane max-w-4xl mx-auto p-12 rounded-2xl text-center scroll-reveal">
+                    <h2 class="text-4xl font-bold text-white">Help Us Build the Future of Browsing</h2>
+                    <p class="mt-4 mb-8 text-gray-400">Join our beta program and be one of the first to experience Aegis Browser's advanced features. Your feedback is crucial to our development.</p>
+                    <form id="beta-test-form" action="https://formspree.io/f/xrbazqll" method="POST" class="max-w-lg mx-auto">
+                        <div class="flex flex-col md:flex-row justify-center items-center gap-4">
+                            <input type="email" name="email" placeholder="you@example.com" class="w-full bg-gray-800/50 border border-gray-700 rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-emerald-500 focus:outline-none transition-shadow" required>
+                            <button type="submit" class="w-full md:w-auto glow-button text-white font-semibold bg-emerald-500 hover:bg-emerald-600 transition-all duration-300 px-8 py-3 rounded-lg text-lg flex-shrink-0">
+                                Request Beta Access
+                            </button>
+                        </div>
+                        <p id="form-status" class="mt-4 text-emerald-400 h-6"></p>
+                    </form>
+                </div>
+            </section>
+
+            <section id="collaborate" class="container mx-auto px-6 py-24 text-center">
+                <div class="scroll-reveal">
+                    <h2 class="text-4xl font-bold text-white">Join the Mission</h2>
+                    <p class="mt-4 mb-8 text-gray-400">Aegis Browser is an open-source project. Your expertise in security, privacy, and web development can help us create a truly secure browsing experience.</p>
+                    <a href="https://workwithmradulumrao.netlify.app/" target="_blank"
+                        class="text-white font-semibold bg-gray-700/50 border border-gray-600 hover:border-gray-500 hover:bg-gray-700/80 transition-all duration-300 px-8 py-4 rounded-lg text-lg">
+                        Contribute Via Collaboration
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <footer class="border-t border-gray-800">
+            <div class="container mx-auto px-6 py-8 text-center text-gray-500">
+                <a href="#" class="flex items-center justify-center gap-2 mb-4">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 2Z"
+                            stroke="#34D399" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <span class="text-lg font-bold text-gray-400">AegisBrowser</span>
+                </a>
+                <p class="text-sm">Built with ❤️ by the open-source community.</p>
+                <div class="mt-4 flex justify-center gap-6">
+                    <a href="https://github.com/your-username/your-repo" class="hover:text-white transition-colors">GitHub</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Optimized scroll reveal animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            document.querySelectorAll('.scroll-reveal').forEach(el => {
+                observer.observe(el);
+            });
+        });
+
+        // Handle Form Submission
+        const form = document.getElementById('beta-test-form');
+        const formStatus = document.getElementById('form-status');
+
+        async function handleSubmit(event) {
+            event.preventDefault();
+            const data = new FormData(event.target);
+            try {
+                const response = await fetch(event.target.action, {
+                    method: form.method,
+                    body: data,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                if (response.ok) {
+                    formStatus.textContent = "Thanks for your interest! We'll be in touch.";
+                    form.reset();
+                } else {
+                    const responseData = await response.json();
+                    if (Object.hasOwn(responseData, 'errors')) {
+                        formStatus.textContent = responseData["errors"].map(error => error["message"]).join(", ");
+                    } else {
+                        formStatus.textContent = "Oops! There was a problem submitting your form.";
+                    }
+                }
+            } catch (error) {
+                formStatus.textContent = "Oops! There was a problem submitting your form.";
+            }
+        }
+        form.addEventListener("submit", handleSubmit);
+    </script>
+</body>
+</html>
